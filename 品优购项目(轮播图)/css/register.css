@@ -1,0 +1,127 @@
+/* 注册页面专属css */
+.w{
+    width: 1200px;
+    margin: 0 auto;
+    box-sizing:border-box;
+}
+header{
+    height: 84px;
+    border-bottom: 2px solid #b1191a;
+}
+header .logo {
+    padding: 15px 0 10px 0;
+    
+}
+.registerarea {
+    margin-top: 20px;
+    height: 450px;
+    border:1px solid #ececec;
+}
+.registerarea .register_hd{
+    height: 42px;
+    padding: 0 13px;
+    border-bottom: 1px solid #ececec;
+    background-color: #ececec;
+    line-height: 42px;
+    color: #333;
+}
+.registerarea .register_hd h3{
+    font-size: 18px;
+    
+}
+.registerarea .register_hd .login{
+    float: right;
+    font-size: 14px;
+    font-weight: 400;
+}
+.registerarea .register_hd .login a{
+    color:#c81623;
+}
+.registerarea .register_form{
+    width: 600px;
+    margin: 50px auto 0;
+    /* background-color: pink  ; */
+}
+.registerarea .register_form ul li{
+    margin-bottom: 20px;
+}
+.registerarea .register_form ul li label{
+    width: 85px;
+    display: inline-block;
+    text-align: right;
+}
+.registerarea .register_form ul li .inp{
+    width: 242px;
+    height: 36px;
+    border:1px solid #999999;
+}
+.registerarea .register_form ul li .error{
+    color:#df3033;
+}
+.error_icon,.success_icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: -4px 5px 0;
+}
+.registerarea .register_form ul li span .error_icon{
+    background: url(../images/error.png) no-repeat;
+}
+.registerarea .register_form ul li span .success_icon{
+    background: url(../images/success.png) no-repeat;
+}
+.registerarea .register_form ul li .success{
+    color:green;
+}
+
+.safe{
+    margin-left: 167px;
+    color: #b2b2b2;
+}
+.safe em{
+    color: #fff;
+}
+.safe .ruo{
+    margin-left: 10px;
+    padding:0 10px;
+    background-color: #de1111;
+}
+.safe .zhong{
+    padding:0 10px;
+    background-color: #40b83f;
+}
+.safe .qiang{
+    padding:0 10px;
+    background-color: #f79100;
+}
+.agree{
+    width: 15px;
+    height: 15px;
+    margin-left: 90px;
+    vertical-align: middle;
+}
+.xy{
+    color: #1ba1e6;
+}
+.btn{
+    width: 200px;
+    height: 34px;
+    margin-left: 100px;
+    background-color: #c81623;
+    color: #fff;
+}
+
+/* mod 版权模块 */
+.mod_copyright{
+    text-align: center;
+}
+.mod_copyright .links{
+    padding: 20px 0 18px;
+}
+.mod_copyright .links a{
+    margin:0 13px;
+}
+.mod_copyright .copyright{
+    line-height: 1.8em;
+}

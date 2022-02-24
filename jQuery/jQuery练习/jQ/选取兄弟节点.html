@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>我是兄弟节点1</li>
+        <li class="me">我是兄弟节点2</li>
+        <li>我是兄弟节点3</li>
+        <li>我是兄弟节点4</li>
+        <li>我是兄弟节点5</li>
+    </ul>
+    <ol>
+        <li>我是妹妹1</li>
+        <li>我是妹妹2</li>
+        <li>我是妹妹3</li>
+        <li>我是妹妹4</li>
+        <li>我是妹妹5</li>
+    </ol>
+</body>
+<script>
+    $(function() {
+        $('.me').siblings('li').css('color', 'red');
+        $('ol li').eq(2).css('color', 'blue')
+
+    })
+</script>
+
+</html>

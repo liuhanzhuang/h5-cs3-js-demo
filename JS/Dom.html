@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">显示当前时间</button>
+    <div>--------</div>
+    <P>**************</P>
+
+</body>
+<script>
+    function getDate() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var dates = date.getDate();
+        var day = date.getDay();
+        var h = date.getHours();
+        h = h < 10 ? '0' + h : h;
+
+        var m = date.getMinutes();
+        m = m < 10 ? '0' + m : m;
+
+        var s = date.getSeconds();
+        s = s < 10 ? '0' + s : s;
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        return '今tiAN是' + year + '年' + month + '月' + dates + '日' + arr[day] + '  ' + h + ':' + m + ':' + s;
+    }
+
+    var btn = document.querySelector('button');
+    var div = document.querySelector('div');
+    var p = document.querySelector('p');
+    btn.onclick = function() {
+        div.innerText = getDate();
+    }
+    p.innerHTML = '<i> 6666666</i>';
+</script>
+
+</html>

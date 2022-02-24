@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        ol>li:nth-child(-n+4) {
+            color: red;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>小li1</li>
+        <li>小li2</li>
+        <li>小li3</li>
+        <li>小li4</li>
+        <li>小li5</li>
+    </ol>
+    <ul>
+        <li>我是之前的小li</li>
+    </ul>
+    <div>我是之前的div</div>
+</body>
+<script>
+    var li = $('<li class="b">我是后来的小li</li>');
+    var div = $('<div>我是后来的小div</div>');
+
+    $('ul').prepend(li);
+    // $('.b').remove();
+    $('div').before(div);
+</script>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            background-color: #000000;
+            box-shadow: 0 0 100px rgba(213, 211, 211, 0.3);
+        }
+        
+        .ball {
+            position: absolute;
+            top: 0;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    window.addEventListener("load", function() {
+
+        //生成一个随机数 
+        function getRandom(max, min) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        };
+
+        function sex(num) {
+            switch (num) {
+                case 10:
+                    return 'a';
+                case 11:
+                    return 'b';
+                case 12:
+                    return 'c';
+                case 13:
+                    return 'd';
+                case 14:
+                    return 'e';
+                case 15:
+                    return 'f';
+            }
+        }
+
+        //生成一个6位颜色代码
+        function getRandomColor() {
+            var myColor = "";
+            for (var i = 0; i < 6; i++) {
+                var singleColor = getRandom(15, 0);
+                if (singleColor >= 10) {
+                    myColor += sex(singleColor);
+
+                } else {
+                    myColor += singleColor;
+                }
+            }
+            return '#' + myColor;
+        }
+
+        // getRandomColor()
+        // console.log(getRandomColor());
+
+        var bodyWidth = document.querySelector('body').clientWidth;
+        var bodyHight = document.querySelector('body').clientHeight;
+        var body = document.querySelector('body');
+        setInterval(function() {
+            var div = document.createElement('div');
+            div.className = "ball";
+            div.style.left = getRandom(bodyWidth, 0) + 'px';
+            div.style.top = getRandom(100, 0) + 'px';
+            div.style.background = getRandomColor();
+            body.append(div);
+            div.fall();
+        }, 100);
+
+        Element.prototype.fall = function() {
+            var obj = this;
+            var timer = setInterval(function() {
+                obj.style.top = (parseInt(obj.style.top) + 1) + 'px';
+                if (obj.style.top < 0 || obj.style.top > bodyHight) {
+                    body.removeChild(obj);
+                    clearInterval(timer);
+                }
+            }, 10)
+        }
+    });
+</script>
+
+</html>

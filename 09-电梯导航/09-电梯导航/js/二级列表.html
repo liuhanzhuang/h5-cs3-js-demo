@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .first li {
+            float: left;
+            margin: 0 10px;
+            /*border: 1px solid black;*/
+            background: #f00;
+        }
+        
+        .second {
+            display: none;
+        }
+        
+        .A {
+            position: relative;
+        }
+        
+        .A:hover .second {
+            display: block;
+            position: absolute;
+        }
+        
+        .second li {
+            float: none;
+            margin: 0 0;
+            background: #0f0;
+        }
+        
+        .third li {
+            background: #00f;
+            margin: 0 0;
+        }
+        
+        .third {
+            display: none;
+        }
+        
+        .a {
+            position: relative;
+        }
+        
+        .a:hover .third {
+            display: block;
+            position: absolute;
+            left: 60px;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="first">
+        <li class="A">File
+            <ul class="second">
+                <li class="a">New
+                    <ul class="third">
+                        <li>Html</li>
+                        <li>Css</li>
+                        <li>JavaScript</li>
+                        <li>Vue</li>
+                        <li>Html</li>
+                        <li>Css</li>
+                        <li>JavaScript</li>
+                        <li>Vue</li>
+                    </ul>
+                </li>
+                <li>Open</li>
+                <li>Save</li>
+                <li>Setting</li>
+            </ul>
+        </li>
+        <li>Edit</li>
+        <li>View</li>
+        <li>Navigate</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    <script src="jQuery3.5.1.js"></script>-->
+    <script src="https://www.jq22.com/jquery/jquery-2.1.1.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /*background: #000;*/
+            /*flex-direction: column;*/
+        }
+        
+        ul {
+            transition: 0.3s linear;
+            top: 0;
+            list-style: none;
+            margin-left: 20px;
+            /*position: absolute;*/
+        }
+        
+        .hourWrap {
+            top: 440px;
+            position: absolute;
+            /*border: 1px solid red;*/
+            display: flex;
+            /*align-items: flex-start;*/
+            justify-content: center;
+        }
+        
+        li {
+            box-sizing: border-box;
+            /*color: #fff;*/
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-size: 1em;
+            border: 1px solid red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hourWrap">
+
+
+        <ul class="h-s">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+        <ul class="h-g">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+
+
+        <ul class="m-s">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+        <ul class="m-g">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+
+        <ul class="s-s">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+        <ul class="s-g">
+            <li>0</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+
+    </div>
+    <script>
+        $(function() {
+
+
+            function splitTime(num) {
+                if (num < 10)
+                    return '0' + num;
+                else
+                    return num + ''
+
+            }
+
+            function toggleTimerTranslate(ele, num, index) {
+                ele.css({
+                    transform: `translateY(${-num[index]*50}px)`
+                })
+            } //32
+
+            function toggleFontSize(ele, num, index) {
+
+                ele.find('li').css({
+                    fontSize: '1em'
+                })
+                //32   0 1 2 3 4 5 6
+
+                // ele.find('li').eq(num[index]).css({
+                //     fontSize: '2em'
+                // })
+                ele[0].querySelectorAll('li')[num[index]].style.fontSize = '2em';
+
+            }
+
+            function timer() {
+
+                var date = new Date();
+                var h = splitTime(date.getHours());
+                var m = splitTime(date.getMinutes());
+                var s = splitTime(date.getSeconds());
+
+                //32
+                toggleTimerTranslate($('.s-g'), s, 1);
+                toggleTimerTranslate($('.s-s'), s, 0);
+
+
+                toggleFontSize($('.s-g'), s, 1);
+                toggleFontSize($('.s-s'), s, 0);
+
+
+                toggleTimerTranslate($('.m-g'), m, 1);
+                toggleTimerTranslate($('.m-s'), m, 0);
+
+
+
+                toggleFontSize($('.m-g'), m, 1);
+                toggleFontSize($('.m-s'), m, 0);
+
+
+                toggleTimerTranslate($('.h-g'), h, 1);
+                toggleTimerTranslate($('.h-s'), h, 0);
+
+
+
+                toggleFontSize($('.h-g'), h, 1);
+                toggleFontSize($('.h-s'), h, 0);
+                setTimeout(timer, 500);
+
+            }
+
+            timer();
+
+        })
+    </script>
+</body>
+
+</html>

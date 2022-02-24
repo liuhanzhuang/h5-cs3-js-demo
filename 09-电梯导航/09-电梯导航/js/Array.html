@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [12, 1, 22, 55, 7, 99];
+
+        // 模拟Array 添加 push 方法
+        Array.prototype.push = function() {
+                for (var i = 0; i < arguments.length; i++) {
+                    this[this.length] = arguments[i];
+                }
+                return this.length;
+            }
+            //模拟Array unshift 方法
+        Array.prototype.unshift = function() {
+                var args = [];
+                for (var i = 0; i < arguments.length; i++) {
+                    args[args.length] = arguments[i];
+                }
+
+                var newArr = args.concat(this);
+                console.log(newArr)
+                return newArr.length;
+            }
+            // this [1,2,3,4]
+            //[11,22,33]
+            //实现Array原型链  unshift 方法
+        Array.prototype.unshift = function() { //在原型链上新增一个_unshift方法
+            // this.length+arguments.length-1：数组的最新的最大索引值
+            // 数组原有的元素需要整体完后挪动的最大临界索引值
+            for (var i = this.length + arguments.length - 1; i > arguments.length - 1; i--) {
+                this[i] = this[i - arguments.length]; //此处把原有元素赋值给该元素在数组中新的索引地方
+                // 第一个for循环就是把原有的元素往后挪，为参说挪出刚刚好的位置索引值
+            }
+            for (var k = 0; k < arguments.length; k++) { //入参只需要正常for循环
+                this[k] = arguments[k]; //数组从0开始往上按顺序添加入参元素
+                // 第二个for循环其实就是把入参，按顺序在数组头部插入
+            }
+            return this.length; //最终返回新数组的长度
+        }
+
+        //模拟Array shift 方法
+        Array.prototype.shift = function() {
+
+            if (this.length == 1) {
+                this.length--;
+                return [];
+            }
+            for (var i = 0; i < this.length - 1; i++) {
+                for (var i = 1; i < this.length; i++) {
+                    this[i - 1] = this[i];
+                }
+                this.length--;
+            }
+            return this.length;
+        }
+
+        //模拟Array pop 方法
+        Array.prototype.pop = function() {
+            var arg = this[this.length - 1];
+            this.length--;
+            return arg;
+        }
+    </script>
+</body>
+
+</html>

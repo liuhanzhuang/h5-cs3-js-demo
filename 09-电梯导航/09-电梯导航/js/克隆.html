@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var obj1 = {
+        name: "张三",
+        age: 15,
+        likeFruit: ["apple", "pear", "orange"],
+        girlFriends: {
+            name: "小刘",
+            likeColor: "pink",
+            height: 165
+        }
+    };
+    // var arr = [666, 231];
+
+    function keLong(target, origin) {
+        var toString = Object.prototype.toString;
+        var arrToString = '[array Object]'; //数组长这熊样
+        for (var k in origin) {
+            if (origin.hasOwnProperty(k)) { //如果origin[k] 是自己的属性才进行克隆，如果是原型链上的就不进行克隆了
+                if (origin[k] !== "null" && typeof(origin[k]) == 'object') { //如果origin[k]是对象类型，则需要进一步处理
+                    if (toString.call(origin[k]) == arrToString) { //代表是数组，需要新建一个数组空间
+                        target[k] = [];
+                    } else { // 代表是对象 ,则需要新建一个对象空间
+                        target[k] = {};
+                    }
+                    keLong(target[k], origin[k]);
+                } else { //表示origin[k]是普通类型，可以直接进行克隆
+                    target[k] = origin[k];
+                }
+            }
+        }
+    }
+
+    var obj2 = {};
+    keLong(obj2, obj1);
+</script>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <button id="ldh">刘德华</button>
+    <button id="zxy">张学友</button><br>
+    <img src="images/ldh.jpg" alt=""> -->
+    <!-- <div></div>
+    <img src="" alt=""> -->
+    <button>点击</button>
+    <input type="text">
+</body>
+<script>
+    // var ldh = document.querySelector('#ldh');
+    // var zxy = document.querySelector('#zxy');
+    // var img = document.querySelector('img');
+    // ldh.onclick = function() {
+    //     img.title = '刘德华！！！';
+    //     img.src = "images/ldh.jpg";
+
+    // }
+    // zxy.onclick = function() {
+    //     img.title = '张学友思密达';
+    //     img.src = "images/zxy.jpg"
+    // }
+
+    // var div = document.querySelector('div');
+    // var img = document.querySelector('img');
+    // var date = new Date('2021-7-22 13:20:20');
+    // var h = date.getHours();
+    // if (h < 12) {
+    //     div.innerHTML = 'Good morning!好好写代码';
+    //     img.src = 'images/s.gif';
+    // } else if (h < 18) {
+    //     div.innerHTML = 'Good afternoon!好好写代码';
+    //     img.src = 'images/x.gif';
+    // } else {
+    //     div.innerHTML = 'Good ninght!好好写代码';
+    //     img.src = 'images/w.gif';
+    // }
+
+    var btn = document.querySelector('button');
+    var inp = document.querySelector('input');
+    btn.onclick = function() {
+        inp.value = '我被点击了';
+        this.disabled = true;
+
+    }
+</script>
+
+</html>

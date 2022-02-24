@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>我是div啊</div>
+</body>
+<script>
+    $(function() {
+        $('div').css({
+            width: '300px',
+            height: '200px',
+            backgroundColor: "pink",
+            //如果是复合属性必须采用驼峰命名法，如果值不是数字，则需要加引号
+            fontSize: '35px'
+        });
+    })
+</script>
+
+</html>

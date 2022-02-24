@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.taobao.com">111</a>
+    <input type="checkbox">
+    <div index='6'>66666</div>
+    <p>w shi p</p>
+</body>
+<script>
+    $(function() {
+        // console.log($('a').prop('href'))
+        // $('a').prop('href', 'http://www.baidu.com')
+        $('input').change(function() {
+            if ($('input').prop('checked')) {
+                console.log($('input').prop('checked'));
+            } else {
+                console.log($('input').prop('checked'));
+            }
+        })
+        console.log($('div').attr('index'))
+        $('div').attr('index', '888')
+        console.log($('div').attr('index'))
+        $('p').data('index', '9999');
+        console.log($('p').data('index'));
+    });
+</script>
+
+</html>

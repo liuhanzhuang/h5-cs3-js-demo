@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button>按钮</button>
+
+<body>
+    <script>
+        var btn = document.querySelector('button');
+        var count = 0;
+        btn.addEventListener('click', fn);
+
+        function fn() {
+
+            count++;
+            console.log(count);
+            if (count == 3) {
+                btn.removeEventListener('click', fn);
+            }
+            alert('bbb');
+        }
+    </script>
+</body>
+
+</html>

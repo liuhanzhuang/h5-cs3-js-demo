@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>操作</button>
+</body>
+<script>
+    var b = document.body;
+    var btn = document.querySelector('button');
+    btn.addEventListener('click', function() {
+        // location.assign('http://www.baidu.com'); 重定向
+        // location.replace('http://www.baidu.com');重新修改URL，不能返回
+        location.reload('http://www.baidu.com') //刷新页面
+
+    })
+    window.addEventListener('resize', function() {
+        console.log(b.offsetWidth)
+    })
+</script>
+
+</html>

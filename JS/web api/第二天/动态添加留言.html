@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 300px;
+        }
+        
+        li {
+            background-color: pink;
+            margin: 5px;
+        }
+        
+        .pl li a {
+            float: right;
+            margin: 0 10px;
+            color: #999;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" rows="" cols=""></textarea>
+    <button>发布</button>
+    <ul class="pl">
+    </ul>
+</body>
+<script type="text/javascript">
+    var text = document.querySelector('textarea');
+    var btn = document.querySelector('button');
+    var pl = document.querySelector('.pl');
+    btn.onclick = function() {
+        if (text.value == '') {
+            alert('你忽悠傻子呢');
+        } else {
+            var li = document.createElement('li');
+            //新增评论
+            pl.insertBefore(li, pl.children[0]);
+            li.innerHTML = text.value + "<a href='javascript:''>删除</a>";
+            text.value = '';
+            // 删除评论
+            var as = document.querySelector('.pl').querySelectorAll('a');
+            for (var i = 0; i < as.length; i++) {
+                as[i].onclick = function() {
+                    pl.removeChild(this.parentNode);
+                }
+            }
+        }
+    }
+</script>
+
+</html>

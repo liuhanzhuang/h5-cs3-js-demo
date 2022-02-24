@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 350px;
+            height: 50px;
+            margin: 300px auto;
+            background-color: pink;
+            font-size: 22px;
+            line-height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var time = 5;
+    fn();
+    setInterval(fn, 1000);
+
+    function fn() {
+
+        if (time == 0) {
+            location.href = 'http://www.baidu.com';
+        } else {
+
+            div.innerHTML = '将在' + (time--) + '秒后为您跳转到百度页面~'
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var day = date.getDay();
+            var h = date.getHours();
+            h = h < 10 ? '0' + h : h;
+
+            var m = date.getMinutes();
+            m = m < 10 ? '0' + m : m;
+
+            var s = date.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+            return '今年是' + year + '年' + month + '月' + dates + '日' + arr[day] + '  ' + h + ':' + m + ':' + s;
+        }
+        console.log(getDate());
+        var date1 = +new Date();
+        console.log(date1);
+        console.log(Date.now());
+console.log('---');
+ var datee = new Date();
+console.log(datee.getTime());    
+</script>
+</body>
+
+</html>

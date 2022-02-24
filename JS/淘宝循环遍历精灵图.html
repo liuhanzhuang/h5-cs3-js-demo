@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 200px;
+            border: 1px solid black;
+            padding: 0;
+            margin: 100px auto;
+        }
+        
+        li {
+            float: left;
+            list-style: none;
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            background: url(images/sprite.png) no-repeat;
+            /* background-color: pink; */
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="wrap">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+        <div style="clear: both;"></div>
+    </ul>
+</body>
+<script>
+    var lis = document.querySelectorAll('li');
+    for (var i = 0; i < lis.length; i++) {
+        // var index = i * 44;
+        lis[i].style.backgroundPosition = '0 -' + i * 44 + 'px';
+    }
+</script>
+
+</html>

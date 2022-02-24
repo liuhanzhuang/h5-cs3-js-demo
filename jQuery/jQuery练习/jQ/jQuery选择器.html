@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div class="div">我是div</div>
+    <ul>
+        <li>我是ul的111
+            <p>w shi p</p>
+        </li>
+        <p>我才是屁111</p>
+        <li>我是ul的222
+            <p>w shi p</p>
+        </li>
+        <p>我才是屁222</p>
+        <li>我是ul的333
+            <p>w shi p</p>
+        </li>
+    </ul>
+    <ol>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+    </ol>
+</body>
+<script>
+    $(function() {
+        $('ul li:odd').css('color', 'red'); //偶数
+        $('ul li:even').css('color', 'blue'); //奇数
+        //$('ul li:eq(1)').css('color', 'red');  选择索引号为1的
+        //('ul li:first').css('color', 'red');   选择第一个子孩子
+
+    })
+</script>
+
+</html>

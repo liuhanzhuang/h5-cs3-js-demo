@@ -1,0 +1,64 @@
+/* list专属css */
+.nav{
+    overflow: hidden;
+}
+.header .kill{
+    position: absolute;
+    left: 190px;
+    top: 40px;
+    border-left: 1px solid #c81523;
+    padding: 3px 0 0 14px;
+}
+.nav .kill_list{
+    float: left;
+}
+.nav .kill_list li{
+    float: left;
+}
+.nav .kill_list li a{
+    display: block;
+    line-height: 47px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    padding: 0 25px;
+}
+.nav .kill_con{
+    float: right;
+    
+    margin-right: 60px;
+}
+.nav .kill_con ul li{
+    float: left;
+}
+.nav .kill_con ul li a{
+    line-height: 49px;
+    font-size: 14px;
+    padding: 0 23px;
+}
+.nav .kill_con ul li:last-child a::after{
+    content: '\e91e';
+    font-family: 'icomoon';
+}
+.kill_main .kill_bd ul{
+padding:10px 0 10px 0;
+}
+.kill_main .kill_bd ul li {
+    overflow: hidden;
+    float: left;
+    margin-right:13px;
+    width: 290px;
+    height: 460px;
+    border: 1px solid transparent;
+}
+.kill_main .kill_bd ul li img{
+    width: 100%;
+    height: 100%;
+    
+}
+.kill_main .kill_bd ul li:hover{
+    border: 1px solid #b1191a;
+}
+.kill_main .kill_bd ul li:nth-child(4n){
+    margin-right: 0;
+}

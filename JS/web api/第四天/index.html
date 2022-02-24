@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    var div = document.querySelector('div');
+    var str = location.search.substr(1);
+    var arr = str.split('=');
+    div.innerHTML = '尊敬的用户：<span style="color:red">' + arr[1] + '</span>欢迎回家'
+</script>
+
+</html>

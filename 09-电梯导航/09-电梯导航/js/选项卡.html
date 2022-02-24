@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 300px;
+            margin: 200px auto;
+        }
+        
+        .sty {
+            display: none;
+            width: 100%;
+            height: 150px;
+            border: 1px solid #424242;
+        }
+        
+        .current {
+            display: block!important;
+        }
+        
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button>111</button>
+        <button>222</button>
+        <button>333</button>
+        <div class="bd">
+            <div class="sty current">这是111</div>
+            <div class="sty">这是222</div>
+            <div class="sty">这是333</div>
+        </div>
+    </div>
+</body>
+<script>
+    var btns = document.getElementsByTagName("button");
+    var divs = document.getElementsByClassName("bd")[0];
+    var index;
+    for (var i = 0; i < btns.length; i++) {
+
+        (function(j) {
+            btns[j].onclick = function() {
+                index = j;
+                for (var i = 0; i < divs.length; i++) {
+                    divs.children[i].className = "";
+                }
+                divs.children[index].className = "current";
+            }
+        }(i))
+
+        // divs.children[index].className = "current";
+        // for (var i = 0; i < divs.length; i++) {
+
+        // }
+    }
+</script>
+
+</html>
